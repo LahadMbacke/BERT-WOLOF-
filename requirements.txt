@@ -1,0 +1,21 @@
+# ======= Core dependencies =======
+torch>=2.4.0
+torchvision>=0.19.0
+torchaudio>=2.4.0
+
+# ======= Training and data handling =======
+numpy>=1.26.0
+pandas>=2.2.0
+tqdm>=4.66.0
+
+# ======= Tokenization / NLP utilities =======
+transformers>=4.44.0
+sentencepiece>=0.2.0
+
+# ======= Debugging / Development =======
+matplotlib>=3.8.0
+jupyter>=1.0.0
+
+# ======= Optional: for reproducibility =======
+pyyaml>=6.0
+setuptools>=68.0.0
