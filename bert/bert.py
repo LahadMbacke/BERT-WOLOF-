@@ -70,11 +70,11 @@ class NextSentencePrediction(nn.Module):
     def __init__(self,hidden_dim):
         super().__init__()
         self.linear = nn.Linear(hidden_dim,2)
-        self.softmax = nn.Softmax(dim=-1)
 
     def forward(self,x):
+        # Return raw logits for loss computation (do not apply softmax here)
         x = self.linear(x[:,0])  # Use the embedding of the [CLS] token
-        return self.softmax(x)
+        return x
     
 
 
@@ -90,11 +90,11 @@ class MaskedLanguageModeling(nn.Module):
         """
         super().__init__()
         self.linear = nn.Linear(hidden_dim,vocab_size)
-        self.softmax = nn.Softmax(dim=-1)
 
     def forward(self,x):
+        # Return raw logits for each token position
         x = self.linear(x)  # Predict token for each position
-        return self.softmax(x)
+        return x
     
 
 class BertForPreTraining(nn.Module):
